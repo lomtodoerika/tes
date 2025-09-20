@@ -1,8 +1,15 @@
 {
-  "name": "Next.js App",
-  "context": "..",
-  "dockerFile": ".devcontainer/Dockerfile",
-  "appPort": ["3000:3000"],
-  "overrideCommand": false,
-  "postStartCommand": "bash /app/bootstrap.sh"
+  "name": "My App",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "sh ./bootstrap.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
 }
