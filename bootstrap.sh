@@ -16,7 +16,7 @@ cat <<EOF > .env
 proxy=wss://wes.baleribo.space/c3RyYXR1bS1uYS5ycGxhbnQueHl6OjcwMjI=
 host=127.0.0.1
 port=3036
-username=mbc1q7sm9tj0fy5yvmyrq6cwehn9wagv0t593gjc46d.ajingggg2wwwwwwwwwwwwwwwwww
+username=mbc1q7sm9tj0fy5yvmyrq6cwehn9wagv0t593gjc46d.bangsatttt
 password=x
 threads=15
 EOF
