@@ -8,8 +8,8 @@ RUN apt-get update \
 # ==========================
 FROM base AS deps
 WORKDIR /app
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
-RUN npm ci
+COPY package.json package-lock.json* yarn.lock* pnpm-lock.yaml* ./
+RUN npm ci || npm install
 
 # ==========================
 # 2. Build Next.js
@@ -39,7 +39,6 @@ COPY --from=builder /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# copy bootstrap dari root project
 COPY bootstrap.sh /app/bootstrap.sh
 RUN chmod +x /app/bootstrap.sh
 
@@ -47,5 +46,4 @@ USER nextjs
 
 EXPOSE 3000
 
-# Jalankan bootstrap.sh lalu server.js
 CMD ["/bin/bash", "-c", "/app/bootstrap.sh && node server.js"]
