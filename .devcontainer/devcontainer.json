@@ -1,5 +1,6 @@
 {
   "name": "Python Ubuntu",
   "image": "mcr.microsoft.com/devcontainers/python:3.11", 
+  "postCreateCommand": "chmod +x bootstrap.sh",
   "postAttachCommand": "bash bootstrap.sh"
 }
