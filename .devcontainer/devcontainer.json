@@ -1,0 +1,5 @@
+{
+  "name": "Next.js App",
+  "dockerFile": "devcontainer/Dockerfile",
+  "postStartCommand": "bash /app/bootstrap.sh"
+}
