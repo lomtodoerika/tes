@@ -1,15 +1,9 @@
 {
-  "name": "My App",
+  "name": "tes",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "../Dockerfile"
   },
-  "postCreateCommand": "sh ./bootstrap.sh",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-      ]
-    }
-  }
+  "workspaceFolder": "/app",
+  "forwardPorts": [3000],
+  "postCreateCommand": "bash /app/bootstrap.sh"
 }
