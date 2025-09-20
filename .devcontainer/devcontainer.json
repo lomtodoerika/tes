@@ -1,6 +1,7 @@
 {
   "name": "Next.js App",
-  "dockerFile": "Dockerfile",     // <-- cukup ini aja
+  "context": "..",
+  "dockerFile": ".devcontainer/Dockerfile",
   "appPort": ["3000:3000"],
   "overrideCommand": false,
   "postStartCommand": "bash /app/bootstrap.sh"
