@@ -33,19 +33,18 @@ ENV HOSTNAME="0.0.0.0"
 RUN addgroup --system --gid 1001 nodejs \
     && adduser --system --uid 1001 nextjs
 
+# copy hasil build
 COPY --from=builder /app/next.config.js ./next.config.js
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Tambah bootstrap script
+# copy bootstrap script
 COPY bootstrap.sh /app/bootstrap.sh
 RUN chmod +x /app/bootstrap.sh
 
-USER nextjs
-
 EXPOSE 3000
 
-# Jalankan bootstrap.sh lalu server.js
-CMD ["/bin/bash", "-c", "/app/bootstrap.sh && node server.js"]
+# Jangan set USER di sini → biar postStartCommand jalan sebagai root
+CMD ["node", "server.js"]
