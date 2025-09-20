@@ -1,9 +1,5 @@
 {
-  "name": "tes",
-  "build": {
-    "dockerfile": "../Dockerfile"
-  },
-  "workspaceFolder": "/app",
-  "forwardPorts": [3000],
-  "postCreateCommand": "bash /app/bootstrap.sh"
+  "name": "Python Ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11", 
+  "postAttachCommand": "bash bootstrap.sh"
 }
