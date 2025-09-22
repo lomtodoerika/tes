@@ -6,6 +6,6 @@
       "version": "latest"
     }
   },
-  "postCreateCommand": "chmod +x bootstrap.sh",
-  "postAttachCommand": "bash bootstrap.sh"
+  "postCreateCommand": "chmod +x bootstrap.sh"
+ 
 }
